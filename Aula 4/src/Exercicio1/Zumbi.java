@@ -1,4 +1,4 @@
-package Exercicio0;
+package Exercicio1;
 
 public class Zumbi{
     String nome;
