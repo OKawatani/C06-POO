@@ -1,4 +1,4 @@
-package Exercicio3;
+package Exercicio4;
 
 public class Main {
 
@@ -10,23 +10,16 @@ public class Main {
         z1.nome = "Ronaldo";
         z1.vida = 100.0;
 
-        z2.nome = "Dava";
-        z2.vida = 150.0;
+        z2.nome = "Fabio";
+        z2.vida = 20.0;
 
         System.out.println("Mostrar vida: " + z1.mostrarVida());
         System.out.println("Mostrar vida: " + z2.mostrarVida());
 
-        z1 = z2;
-        z1.vida = 200.0;
+        z2.transfereVida(z1, 50);
 
         System.out.println("Mostrar vida: " + z1.mostrarVida());
         System.out.println("Mostrar vida: " + z2.mostrarVida());
-
-
-
 
     }
-
-
-
 }
