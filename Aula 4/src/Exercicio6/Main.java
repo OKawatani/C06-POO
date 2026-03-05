@@ -12,8 +12,10 @@ public class Main {
 
         kart1.nome = "RB20";
         kart1.motor.cilindradas = "100 cilindradas";
+        kart1.motor.velocidadeMaxima = 100;
         piloto1.nome = "Max";
         piloto1.vilao = true;
+
 
         // Criação do piloto 2 e seu kart.
 
@@ -25,6 +27,7 @@ public class Main {
         piloto2.nome = "Leclerc";
         kart2.nome = "Fe44";
         kart2.motor.cilindradas = "150 cilindradas";
+        kart2.motor.velocidadeMaxima = 150;
         piloto2.vilao = false;
 
         kart1.motor.mostrarInfo();
