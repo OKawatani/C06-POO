@@ -43,5 +43,7 @@ public class Banda {
 
     void Banda(String nome, String genero) {
 
+        this.nome = nome;
+        this.genero = genero;
     }
 }

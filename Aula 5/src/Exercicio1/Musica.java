@@ -6,5 +6,8 @@ public class Musica {
 
     void Musica(String nome, double duracao){
 
+        this.nome = nome;
+        this.duracao = duracao;
+
     }
 }
