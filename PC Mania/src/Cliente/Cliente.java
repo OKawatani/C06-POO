@@ -1,13 +1,9 @@
 package Cliente;
 
-import java.util.Scanner;
-
 public class Cliente {
     private String nome;
     private String cpf;
     private float carrinho;
-
-    Scanner input = new Scanner(System.in);
 
     //Construtor
     public Cliente(String nome, String cpf) {
