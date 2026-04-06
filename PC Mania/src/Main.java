@@ -54,7 +54,7 @@ public class Main {
     computador3.addMemoriaUSB(memoriaUSB3);
 
     //Cliente
-    Cliente cliente1 = new Cliente("Eduardo", "707.412.956-95");
+    Cliente cliente1 = new Cliente("Teste", "123.456.789-00");
 
         Cliente clienteLogado = null;
 
@@ -97,13 +97,29 @@ public class Main {
 
                         System.out.println("Promoção 1");
                         computador1.mostraPCConfigs();
+                        System.out.println(" ");
 
                         System.out.println("Promoção 2");
                         computador2.mostraPCConfigs();
+                        System.out.println(" ");
 
                         System.out.println("Promoção 3");
                         computador3.mostraPCConfigs();
+                        System.out.println(" ");
 
+                        compra = input.nextInt();
+                        System.out.println("Produto adicionado ao carrinho");
+
+                        if(compra == 1){
+                            cliente1.calculaTotalCompra(computador1.getPreco());
+
+                        }
+                        if(compra == 2){
+                            cliente1.calculaTotalCompra(computador2.getPreco());
+                        }
+                        if(compra == 3){
+                            cliente1.calculaTotalCompra(computador3.getPreco());
+                        }
 
 
                     }
@@ -111,7 +127,14 @@ public class Main {
                     break;
 
                 case 0:
+                    if(clienteLogado != null){
+                        System.out.println("Dados do cliente: " + clienteLogado.getNome() );
+                        System.out.println("Cpf: " + clienteLogado.getCpf());
+                    }
+                    System.out.println("Valor total dos itens R$:" + cliente1.getCarrinho());
+
                     System.out.println("Saindo do sistema...");
+
                     break;
 
                 default:

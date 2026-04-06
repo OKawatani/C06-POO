@@ -15,6 +15,7 @@ public class Cliente {
         this.cpf = cpf;
     }
 
+    //Métodos
     public boolean Login(String dados){
 
         if(this.nome.equals(dados) || this.cpf.equals(dados)){
@@ -23,6 +24,14 @@ public class Cliente {
 
         return false;
     }
+
+    public void calculaTotalCompra(float preco){
+
+        carrinho += preco;
+
+    }
+
+
 
     //Getters
     public String getNome() {
@@ -33,6 +42,9 @@ public class Cliente {
         return cpf;
     }
 
+    public float getCarrinho() {
+        return carrinho;
+    }
 }
 
 

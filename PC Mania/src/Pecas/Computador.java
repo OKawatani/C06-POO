@@ -55,4 +55,7 @@ public class Computador {
         this.memoriaUSB = memoriaUSB;
     }
 
+    public float getPreco() {
+        return preco;
+    }
 }
