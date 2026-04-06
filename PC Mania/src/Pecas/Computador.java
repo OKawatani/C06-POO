@@ -14,7 +14,7 @@ public class Computador {
     //Agregações
     private MemoriaUSB memoriaUSB;
 
-    //Construtores
+    //Construtor
 
     public Computador(String marca, float preco, SistemaOperacional sistemaOperacional,  HardwareBasico[] hardwareBasicos) {
         this.marca = marca;
@@ -27,17 +27,32 @@ public class Computador {
     public void mostraPCConfigs() {
 
         System.out.println("Marca: " + marca);
-        System.out.println("Preco: " + preco);
+        System.out.println("Preco R$: " + preco);
 
-        System.out.println("Sistema Operacional: " + sistemaOperacional.getNome());
+        System.out.println("Sistema Operacional: " + sistemaOperacional.getNome() + " " +  sistemaOperacional.getTipo() + " bits ");
 
-        for(int i = 0; i < hardwareBasicos.length; i++){
-            System.out.println(hardwareBasicos[i].getNome() + " : " + hardwareBasicos[i].getCapacidade());
+        System.out.println("Processador: " + this.hardwareBasicos[0].getNome() + " " + this.hardwareBasicos[0].getCapacidade() + " Mhz");
+        System.out.println("Memoria: " + this.hardwareBasicos[1].getNome() +  " " + this.hardwareBasicos[1].getCapacidade() + " Gb ");
+
+        if(this.hardwareBasicos[2].getCapacidade() < 500){
+            System.out.println("Armazenamento: " + this.hardwareBasicos[2].getNome() + " " + this.hardwareBasicos[2].getCapacidade() + " Tb");
+
+        }
+        else{
+            System.out.println("Armazenamento: " + this.hardwareBasicos[2].getNome() + " " + this.hardwareBasicos[2].getCapacidade() + " Gb");
         }
 
-        if(memoriaUSB != null){
-            System.out.println("Memoria USB: " + memoriaUSB.getNome());
+        if(this.memoriaUSB.getCapacidade() == 1){
+            System.out.println("Memoria USB: " + memoriaUSB.getNome() + " capacidade " + memoriaUSB.getCapacidade() + " Tb");
         }
+        else{
+            System.out.println("Memoria USB: " + memoriaUSB.getNome() + " capacidade " + memoriaUSB.getCapacidade() + " Gb");
+        }
+
+    }
+
+    public void addMemoriaUSB(MemoriaUSB memoriaUSB){
+        this.memoriaUSB = memoriaUSB;
     }
 
 }

@@ -11,6 +11,8 @@ public class Main {
     public static void main(String[] args) {
 
     Scanner input = new Scanner(System.in);
+    int opcao, compra;
+    String dado;
 
 
     //Sistemas operacionais
@@ -41,12 +43,89 @@ public class Main {
     MemoriaUSB memoriaUSB3 = new MemoriaUSB("HD Externo", 1);
 
 
-
+    //Promoções
     Computador computador1 = new Computador("Apple", 668, sistema1, hardwareBasico1);
-    Computador computador2 = new Computador("Samsung", 1902, sistema2, hardwareBasico2);
-    Computador computador3 = new Computador("Dell", 6346, sistema3, hardwareBasico3);
+    computador1.addMemoriaUSB(memoriaUSB1);
 
-    computador1.mostraPCConfigs();
+    Computador computador2 = new Computador("Samsung", 1902, sistema2, hardwareBasico2);
+    computador2.addMemoriaUSB(memoriaUSB2);
+
+    Computador computador3 = new Computador("Dell", 6346, sistema3, hardwareBasico3);
+    computador3.addMemoriaUSB(memoriaUSB3);
+
+    //Cliente
+    Cliente cliente1 = new Cliente("Eduardo", "707.412.956-95");
+
+        Cliente clienteLogado = null;
+
+        do{
+
+            System.out.println("PcMania");
+            System.out.println("1- Fazer Login");
+            System.out.println("2- Realizar compras");
+            System.out.println("0- Sair");
+
+            opcao = input.nextInt();
+
+            switch(opcao){
+
+                case 1:
+
+                    System.out.println("Digite o nome ou o cpf da conta:");
+                    dado = input.next();
+
+                    if(cliente1.Login(dado)){
+                        clienteLogado = cliente1;
+
+                        System.out.println("Login realizado");
+                        System.out.println("Bem vindo " + clienteLogado.getNome());
+                    }
+                    else{
+                        System.out.println("Cliente não encontrado");
+                    }
+
+                    break;
+
+                case 2:
+
+                    if(clienteLogado == null){
+                        System.out.println("Faça login primeiro!");
+                    }
+                    else{
+
+                        System.out.println("Qual promoção você deseja?");
+
+                        System.out.println("Promoção 1");
+                        computador1.mostraPCConfigs();
+
+                        System.out.println("Promoção 2");
+                        computador2.mostraPCConfigs();
+
+                        System.out.println("Promoção 3");
+                        computador3.mostraPCConfigs();
+
+
+
+                    }
+
+                    break;
+
+                case 0:
+                    System.out.println("Saindo do sistema...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida");
+
+            }
+
+        }while(opcao != 0);
+
+
+
+
+
+
 
 
 
